@@ -2,7 +2,6 @@
 //  SecondViewController.swift
 //  TrustBoxInNativeApp
 //
-//  Created by Mads Godvin Jensen on 27/02/2017.
 //  Copyright © 2017 Trustpilot A/S. All rights reserved.
 //
 
