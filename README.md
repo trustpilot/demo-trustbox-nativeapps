@@ -5,7 +5,7 @@ This repository has and iOS and an Android app that show how Trustpilot's TrustB
 There are examples of using the TrustBoxes for web and building a custom integration with the Trustpilot API.
 
 
-## (iOS)[iOS/]
+## iOS
 
 
-## (Android)[Android/]
+## Android
