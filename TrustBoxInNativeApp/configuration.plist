@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>apiKey</key>
+	<string>Get an API key by contacting your Trustpilot account manager</string>
+	<key>businessUnitId</key>
+	<string>46d6a890000064000500e0c3</string>
+</dict>
+</plist>

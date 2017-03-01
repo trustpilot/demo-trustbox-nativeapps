@@ -13,6 +13,10 @@
 		3D6832F31E64489C00274AE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6832F11E64489C00274AE8 /* Main.storyboard */; };
 		3D6832F51E64489C00274AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6832F41E64489C00274AE8 /* Assets.xcassets */; };
 		3D6832F81E64489C00274AE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6832F61E64489C00274AE8 /* LaunchScreen.storyboard */; };
+		3D6833041E65814300274AE8 /* ReviewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6833031E65814300274AE8 /* ReviewPageViewController.swift */; };
+		3D6833061E6583FA00274AE8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6833051E6583FA00274AE8 /* ReviewViewController.swift */; };
+		3D6833081E65856200274AE8 /* TrustpilotApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6833071E65856200274AE8 /* TrustpilotApi.swift */; };
+		3D68330B1E66D44900274AE8 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D68330A1E66D44900274AE8 /* configuration.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		3D6832F41E64489C00274AE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6832F71E64489C00274AE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D6832F91E64489C00274AE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D6833031E65814300274AE8 /* ReviewPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPageViewController.swift; sourceTree = "<group>"; };
+		3D6833051E6583FA00274AE8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		3D6833071E65856200274AE8 /* TrustpilotApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustpilotApi.swift; sourceTree = "<group>"; };
+		3D68330A1E66D44900274AE8 /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				3D6832F41E64489C00274AE8 /* Assets.xcassets */,
 				3D6832F61E64489C00274AE8 /* LaunchScreen.storyboard */,
 				3D6832F91E64489C00274AE8 /* Info.plist */,
+				3D6833031E65814300274AE8 /* ReviewPageViewController.swift */,
+				3D6833051E6583FA00274AE8 /* ReviewViewController.swift */,
+				3D6833071E65856200274AE8 /* TrustpilotApi.swift */,
+				3D68330A1E66D44900274AE8 /* configuration.plist */,
 			);
 			path = TrustBoxInNativeApp;
 			sourceTree = "<group>";
@@ -127,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6832F81E64489C00274AE8 /* LaunchScreen.storyboard in Resources */,
+				3D68330B1E66D44900274AE8 /* configuration.plist in Resources */,
 				3D6832F51E64489C00274AE8 /* Assets.xcassets in Resources */,
 				3D6832F31E64489C00274AE8 /* Main.storyboard in Resources */,
 			);
@@ -141,7 +154,10 @@
 			files = (
 				3D6832F01E64489C00274AE8 /* SecondViewController.swift in Sources */,
 				3D6832EC1E64489C00274AE8 /* AppDelegate.swift in Sources */,
+				3D6833061E6583FA00274AE8 /* ReviewViewController.swift in Sources */,
 				3D6832EE1E64489C00274AE8 /* FirstViewController.swift in Sources */,
+				3D6833081E65856200274AE8 /* TrustpilotApi.swift in Sources */,
+				3D6833041E65814300274AE8 /* ReviewPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,6 +2,7 @@
 //  AppDelegate.swift
 //  TrustBoxInNativeApp
 //
+
 //  Copyright © 2017 Trustpilot A/S. All rights reserved.
 //
 
