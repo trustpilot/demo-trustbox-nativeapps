@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">TrustBoxInNativeApp</string>
+    <string name="app_name">TrustBox in a native app</string>
+    <string name="title_activity_main_tab">TrustBox in a native app</string>
+    <string name="action_trustbox">Using a TrustBox</string>
+    <string name="action_api">Using the API</string>
+    <string name="description_trustbox">This is a demo of using a TrustBox by putting it in a web view. Use the TrustBox bootstrap script and code snippet.</string>
+    <string name="description_api">This demo shows how to use the API to build a custom TrustBox showing your latest reviews.</string>
 </resources>
