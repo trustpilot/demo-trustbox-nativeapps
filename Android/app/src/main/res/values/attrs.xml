@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Stars">
+        <attr name="fillColor1" format="color" />
+        <attr name="fillColor2" format="color" />
+        <attr name="fillColor3" format="color" />
+        <attr name="fillColor4" format="color" />
+        <attr name="fillColor5" format="color" />
+        <attr name="starColor" format="color" />
+    </declare-styleable>
+</resources>

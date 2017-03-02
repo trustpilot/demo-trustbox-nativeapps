@@ -10,4 +10,10 @@
         android:layout_height="wrap_content"
         android:padding="16dp" />
 
+    <ImageView
+        android:id="@+id/starsImageView"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"/>
+
 </RelativeLayout>
