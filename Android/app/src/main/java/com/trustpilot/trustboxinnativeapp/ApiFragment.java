@@ -77,7 +77,7 @@ public class ApiFragment extends Fragment {
         }) {
             public Map<String,String> getHeaders() {
                 Map<String, String>  params = new HashMap<>();
-                params.put("ApiKey", "YOU_API_KEY"); // TODO Get an API key from an account manager and paste it here.
+                params.put("ApiKey", "YOU_API_KEY"); // TODO Get an API key from your Trustpilot account manager and paste it here.
 
                 return params;
             }
