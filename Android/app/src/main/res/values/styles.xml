@@ -1,0 +1,50 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
+    </style>
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    </style>
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="Stars0">
+        <item name="fillColor1">#C7C7C6</item>
+        <item name="fillColor2">#C7C7C6</item>
+        <item name="fillColor3">#C7C7C6</item>
+        <item name="fillColor4">#C7C7C6</item>
+        <item name="fillColor5">#C7C7C6</item>
+        <item name="starColor">#FFFFFF</item>
+    </style>
+    <style name="Stars1" parent="Stars0">
+        <item name="fillColor1">#E02429</item>
+    </style>
+    <style name="Stars2" parent="Stars0">
+        <item name="fillColor1">#F27425</item>
+        <item name="fillColor2">#F27425</item>
+    </style>
+    <style name="Stars3" parent="Stars0">
+        <item name="fillColor1">#F8CC1A</item>
+        <item name="fillColor2">#F8CC1A</item>
+        <item name="fillColor3">#F8CC1A</item>
+    </style>
+    <style name="Stars4" parent="Stars0">
+        <item name="fillColor1">#72B043</item>
+        <item name="fillColor2">#72B043</item>
+        <item name="fillColor3">#72B043</item>
+        <item name="fillColor4">#72B043</item>
+    </style>
+    <style name="Stars5" parent="Stars0">
+        <item name="fillColor1">#00814E</item>
+        <item name="fillColor2">#00814E</item>
+        <item name="fillColor3">#00814E</item>
+        <item name="fillColor4">#00814E</item>
+        <item name="fillColor5">#00814E</item>
+    </style>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:text="@string/description_api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:paddingBottom="50dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:src="@drawable/trustpilot_logo___light_background_1024"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:id="@+id/starsImageView"
+            android:src="@drawable/stars"
+            android:layout_below="@id/logoImageView"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+
+        <TextView
+            android:id="@+id/trustScoreView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/starsImageView"
+            android:textAlignment="center"
+            android:textSize="11dp"
+            android:text="TRUSTSCORE 6.7  |  1977 REVIEWS"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>
