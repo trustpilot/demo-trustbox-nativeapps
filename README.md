@@ -24,5 +24,5 @@ API documentation can be found at [developers.trustpilot.com](https://developers
 
 The two demo apps in the repository are using are API to show a company's stars etc. See the specific implementations here:
 
-- [iOS app](https://github.com/trustpilot/demo-trustbox-nativeapps/tree/master/iOS)
-- [Android app](https://github.com/trustpilot/demo-trustbox-nativeapps/tree/master/Android)
+- [iOS app](iOS)
+- [Android app](Android)
