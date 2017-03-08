@@ -53,3 +53,40 @@ trustboxWebView?.loadHTMLString(metaTag + trustboxScript + trustboxWidget, baseU
 **Handle navigation from links in the TrustBox.** Any links in the TrustBox are swallowed by iOS. To handle links being tapped, implement [WKWebViewNavigationDelegate](https://developer.apple.com/reference/webkit/wknavigationdelegate).
 
 With this delegate links can be made to open in Safari or switch to another view in the app. Whatever makes sense.
+
+
+## Using the Trustpilot API
+
+We have a public API that can be used to build custom versions of the TrustBoxes. Essentially the TrustBoxes are built on these APIs. Through the APIs you can get details about a company on Trustpilot such as their TrustScore, number of reviews and current star rating. You can also request reviews that can then be displayed in your app.
+
+The demo app uses two endpoints on our API, one to get a business unit ([what's a business unit?](https://developers.trustpilot.com/#BusinessUnit)) with details about star rating, TrustScore etc, and one to get the latest reviews for that business unit. The business unit the app is using is trustpilot.com - the business unit id is defined in the `configuration.plist` file. This is also where the API key is stored.
+
+The API calls are implemented in the [TrustpilotApi.swift](TrustBoxInNativeApp/TrustpilotApi.swift) file. The API requests are simple HTTP GET requests in this case done by using the [URLRequest](https://developer.apple.com/reference/foundation/urlrequest). Responses from the API are in JSON which is easily handled in iOS by using [JSONSerialization](https://developer.apple.com/reference/foundation/jsonserialization).
+
+All that is left after calling the API and deserializing the response data is unwrapping the data and using it in a view. The [SecondViewController.swift](TrustBoxInNativeApp/SecondViewController.swift) is an example of that. The JSON data is deserialized to a dictionary with `String` keys and `Any` values. Getting a specific value can be done like this:
+
+```js
+let stars = dictionary["stars"] as! NSNumber
+```
+
+Since HTTP requests are asynchronous the TrustpilotApi methods take a callback, which is called when a response comes back. In iOS this happens on a different thread from the UI. That means that to update the UI with data from the API, use the DispatchQueue to get back on the main thread. It's still a good idea to update the UI asynchronously though, so the app doesn't become unresponsive.
+
+```js
+DispatchQueue.main.async {
+  self.updateView(...)
+}
+```
+
+The DispatchQueue is part of [Grand Central Dispatch.](https://developer.apple.com/reference/dispatch)
+
+
+### Showing reviews
+
+[ReviewPageViewController.swift](TrustBoxInNativeApp/RReviewPageViewController.swift) is an example of getting reviews from the API and showing them in a view. The process is the same as above. The reviews endpoint on the API can be filtered in a lot of ways. For example to only return 4- and 5-star reviews, latest 5 reviews, reviews with a specific tag etc.
+
+
+### Notes & references
+
+To use our APIs you need an API key. You can get this key from your account manager at Trustpilot. Here's an article about [getting started with our APIs](https://support.trustpilot.com/hc/articles/207309867).
+
+API documentation can be found at [developers.trustpilot.com](https://developers.trustpilot.com/)
