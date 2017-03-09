@@ -37,3 +37,50 @@ In this demo app a TrustBox Mini Carousel has been implemented. Using the [fragm
 4. The TrustBox obviously needs to access the network to download the bootstrap script as well as the data to show. Therefore the app needs the internet permission (see the [AndroidManifest.xml](app/src/main/AndroidManifest.xml) file)
 
 **That's it!** You have a TrustBox in your app!
+
+
+## Using the Trustpilot API
+
+We have a public API that can be used to build custom versions of the TrustBoxes. Essentially the TrustBoxes are built on these APIs. Through the APIs you can get details about a company on Trustpilot such as their TrustScore, number of reviews and current star rating. You can also request reviews that can then be displayed in your app.
+
+The demo app uses two endpoints on our API, one to get a business unit ([what's a business unit?](https://developers.trustpilot.com/#BusinessUnit)) with details about star rating, TrustScore etc, and one to get the latest reviews for that business unit. The business unit the app is using is trustpilot.com - the business unit id is hard coded in the API call in this demo app. So is the API key.
+
+The demo API call is implemented in the [ApiFragment.java](app/src/main/java/com/trustpilot/trustboxinnativeapp/ApiFragment.java) file. The API request is a simple HTTP GET request, in this case done by using [Volley](https://developer.android.com/training/volley/index.html) - an HTTP library for Android apps. Responses from the API are in JSON which is easily handled in Volley by using the [JsonObjectRequest](https://github.com/google/volley/blob/master/src/main/java/com/android/volley/toolbox/JsonObjectRequest.java) class to send the request.
+
+All that is left after calling the API and deserializing the response data is unwrapping the data and using it in a view. The response object from JsonObjectRequest is a JSONObject that has methods to get data in the appropriate data type:
+
+```java
+// response is of type JSONObject
+int stars = response.getInt("stars");
+double score = response.getDouble("trustScore");
+
+// getting a child object and then a property on that object
+JSONObject reviews = response.getJSONObject("numberOfReviews");
+int total = reviews.getInt("total");
+```
+
+After unwrapping all the necessary data all that's left is updating the view to show it.
+
+Actually sending the Volley JsonObjectRequest takes a bit of code. This demo app's approach a bit simple and not that generic or reusable. But it serves to show the point:
+
+```java
+JsonObjectRequest apiRequest = new JsonObjectRequest(...);
+
+Cache cache = new DiskBasedCache(this.getContext().getCacheDir(), 0);
+Network network = new BasicNetwork(new HurlStack());
+RequestQueue queue = new RequestQueue(cache, network);
+queue.start();
+queue.add(apiRequest);
+```
+
+
+### Showing reviews
+
+To get reviews from the API and show them is fairly similar to getting business unit data. It's just a matter of requesting a different endpoint. There is no example of this call in the demo app though. The endpoint to use is [https://api.trustpilot.com/v1/business-units/[BUSINESS_UNIT_ID]/reviews](https://developers.trustpilot.com/business-unit-api#get-a-business-unit's-reviews). The reviews endpoint on the API can be filtered in a lot of ways. For example to only return 4- and 5-star reviews, latest 5 reviews, reviews with a specific tag etc.
+
+
+### Notes & references
+
+To use our APIs you need an API key. You can get this key from your account manager at Trustpilot. Here's an article about [getting started with our APIs](https://support.trustpilot.com/hc/articles/207309867).
+
+API documentation can be found at [developers.trustpilot.com](https://developers.trustpilot.com/)
