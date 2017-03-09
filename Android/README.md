@@ -4,11 +4,12 @@
 
 While the TrustBoxes (our widgets that show TrustScore, stars, reviews etc.) are designed to be used on web sites they can work just as well in a native mobile app. Using the [WebView](https://developer.android.com/reference/android/webkit/WebView.html) from the webkit SDK the TrustBox can be used to easily show some Trustpilot data in your app.
 
-In this demo app a TrustBox Mini Carousel has been implemented. Using the [fragment_api.xml](app/src/main/res/layout/fragment_api.xml) to lay out the necessary views and the [TrustBoxFragment.java](app/src/main/java/com/trustpilot/trustboxinnativeapp/TrustBoxFragment.java) to hook it all up. The implementation is done in these.
+In this demo app a TrustBox Mini Carousel has been implemented. Using the [fragment_api.xml](app/src/main/res/layout/fragment_api.xml) to lay out the necessary views and the [TrustBoxFragment.java](app/src/main/java/com/trustpilot/trustboxinnativeapp/TrustBoxFragment.java) to hook it all up.
 
 ### Setting up the TrustBox
 
-1. Get the code for the TrustBox to implement. There are two parts; a `<script>` tag and a `<div>` tag. Get these code snippets from our business product under Integrations > TrustBoxes.
+1. Get the code for the TrustBox to implement. There are two parts; a `<script>` tag and a `<div>` tag. See [how to choose a TrustBox](https://support.trustpilot.com/hc/articles/204123713) in our support center
+
 
 2. In the `<script>` tag is a URL to the TrustBox bootstrap code. This URL is protocol-relative meaning it doesn't have a defined `http:` or `https:`, it just uses whatever the host web site uses. That won't work in a native mobile app, so add `https:` to the URL: **https**://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js
 
@@ -32,7 +33,7 @@ In this demo app a TrustBox Mini Carousel has been implemented. Using the [fragm
 
   Note the first parameter to the `loadDataWithBaseURL` method. It's the base URL that is used to resolve relative URLs in the view.
 
-  Another gotcha is that JavaScript must be manually enabled in the view. If it's not the TrustBox bootstrap script will not be allowed to execute and the TrustBox can't load.
+  JavaScript must be manually enabled in the view. If it's not the TrustBox bootstrap script will not be allowed to execute and the TrustBox can't load.
 
 4. The TrustBox obviously needs to access the network to download the bootstrap script as well as the data to show. Therefore the app needs the internet permission (see the [AndroidManifest.xml](app/src/main/AndroidManifest.xml) file)
 
@@ -61,7 +62,7 @@ int total = reviews.getInt("total");
 
 After unwrapping all the necessary data all that's left is updating the view to show it.
 
-Actually sending the Volley JsonObjectRequest takes a bit of code. This demo app's approach a bit simple and not that generic or reusable. But it serves to show the point:
+Sending the Volley JsonObjectRequest takes a bit of code. This demo app's simple approach is not generic or reusable but it's enough for this demonstration.
 
 ```java
 JsonObjectRequest apiRequest = new JsonObjectRequest(...);
@@ -76,7 +77,7 @@ queue.add(apiRequest);
 
 ### Showing reviews
 
-To get reviews from the API and show them is fairly similar to getting business unit data. It's just a matter of requesting a different endpoint. There is no example of this call in the demo app though. The endpoint to use is [https://api.trustpilot.com/v1/business-units/[BUSINESS_UNIT_ID]/reviews](https://developers.trustpilot.com/business-unit-api#get-a-business-unit's-reviews). The reviews endpoint on the API can be filtered in a lot of ways. For example to only return 4- and 5-star reviews, latest 5 reviews, reviews with a specific tag etc.
+To get reviews from the API and show them is similar to getting business unit data. It's just a matter of requesting a different endpoint. The endpoint to use is [https://api.trustpilot.com/v1/business-units/[BUSINESS_UNIT_ID]/reviews](https://developers.trustpilot.com/business-unit-api#get-a-business-unit's-reviews). The reviews endpoint on the API can be filtered in a lot of ways. For example to only return 4- and 5-star reviews, latest 5 reviews, reviews with a specific tag etc.
 
 
 ### Notes & references
