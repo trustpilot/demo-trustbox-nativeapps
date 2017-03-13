@@ -4,11 +4,11 @@
 
 While the TrustBoxes (our widgets that show TrustScore, stars, reviews etc.) are designed to be used on web sites they can work just as well in a native mobile app. Using the [WKWebView](https://developer.apple.com/reference/webkit/wkwebview) from the iOS WebKit SDK the TrustBox can be used to easily show some Trustpilot data in your app.
 
-In this demo app a TrustBox Mini Carousel has been implemented. Using the Main.storyboard to lay out the necessary views and the FirstViewController.swift to hook it all up. The implementation is done in these:
+In this demo app a TrustBox Mini Carousel has been implemented. Using the Main.storyboard to lay out the necessary views and the FirstViewController.swift to hook it all up.
 
 ### Setting up the TrustBox
 
-1. Get the code for the TrustBox to implement. There are two parts; a `<script>` tag and a `<div>` tag. Get these code snippets from our business product under Integrations > TrustBoxes.
+1. Get the code for the TrustBox to implement. There are two parts; a `<script>` tag and a `<div>` tag. See [how to choose a TrustBox](https://support.trustpilot.com/hc/articles/204123713) in our support center
 
 2. In the `<script>` tag is a URL to the TrustBox bootstrap code. This URL is protocol-relative meaning it doesn't have a defined `http:` or `https:`, it just uses whatever the host web site uses. That won't work in a native mobile app, so add `https:` to the URL: **https**://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js
 

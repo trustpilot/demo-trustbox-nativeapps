@@ -28,7 +28,7 @@ public class TrustBoxFragment extends Fragment {
                 bootstrap + trustBox,
                 "text/html",
                 null,
-                "https://widget.trustpilot.com");
+                null);
 
     }
 }
